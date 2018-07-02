@@ -20,6 +20,25 @@ let rec hilo n =
         in hilo n
 ;;
 
+(* better version of hilo that uses sequences. *)
+let rec hilo2 n =
+  print_string "Type a number: ";
+  let i = read_int() in
+    if (n = i) then
+      begin
+        print_string "Correct!"; print_newline()
+      end
+    else
+      begin
+        if (i < n) then
+            begin print_string "Higher!"; print_newline() end
+        else
+            begin print_string "Lower!"; print_newline() end;
+        hilo n
+      end
+;;
+
+
 let () = print_string "Select a number to play the game with: " in
   let n = read_int() in
-    hilo n;;
+    hilo2 n;;
